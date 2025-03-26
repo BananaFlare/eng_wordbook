@@ -9,8 +9,10 @@ Gem::Specification.new do |spec|
   spec.email = ["vidishev@sfedu.ru"]
 
   spec.summary = "it is a gem for doing some of my english hometasks"
-  spec.description = "it should take an article via link and use gpt to choose words that can be unknown for people with given english level. \
-  after that it makes word document with the table containing all this words, and maybe some additional, that you add by yourself, with it's \
+  spec.description = "it should take an article via link and use gpt to choose words that can be unknown for people with
+  \ given english level. \
+  after that it makes word document with the table containing all this words, and maybe some additional, that you add by
+  \ yourself, with it's \
   translation and transcription"
   # spec.homepage = "TODO: Put your gem's website or public repo URL here."
   spec.license = "MIT"
@@ -41,4 +43,3 @@ Gem::Specification.new do |spec|
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
 end
-

@@ -2,10 +2,14 @@
 
 require_relative "eng_wordbook/version"
 
+require "caracal"
+require_relative "Docx"
+# u should divide this module int the future
 module EngWordbook
-  class Error < StandardError; end
-  extend self
-  def hello
-    p "hello"
-  end
+  DocxFileWork.create_file
+  class EngWordBookError < StandardError; end
 end
+
+
+
+
