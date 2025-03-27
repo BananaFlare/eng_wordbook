@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# тесты надо написать и разбить
 
 require "test_helper"
 # main test class
