@@ -20,7 +20,7 @@ module DocxFileWork
   def self.create_file
     title = Input.title
     table_arr = table_arr_generator
-    Caracal::Document.save("./tmp/#{title}.docx") do |doc|
+    Caracal::Document.save(__dir__+"/../tmp/#{title}.docx") do |doc|
       doc.h1 title.to_s
       doc.table table_arr do
         cell_style rows[0], background: "dddddd", bold: true

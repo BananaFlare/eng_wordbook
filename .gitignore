@@ -8,3 +8,5 @@
 /tmp/
 /.cofig
 *.docx
+/lib/.env.rb
+/lib/gecodriver/
