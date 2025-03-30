@@ -2,18 +2,15 @@
 
 # input file connection
 require_relative "input"
+require_relative 'text_parser'
+require_relative 'api_deep_seek'
 # module for creation and interaction with docx file
 module DocxFileWork
   def self.table_arr_generator
-    words = %w[1 2 345]
-    transcription = %w[ˈsʌmθɪŋ ˈsʌmθɪŋ ˈsʌmθɪŋ]
-    translation = %w[что-то что-то что-то]
-    example = ["Something he had seen.", "Something he had seen.", "Something he had seen."]
-    numeration = (1..words.size).to_a
+    text =ApiDeepSeek.words_to_array
+    wholelot_array = TextParser.text_parser(text)
     table_arr = [["№", "Word", "Transcription", "Translation", "Example"]]
-    (0..words.size - 1).each do |i|
-      table_arr.append([numeration[i].to_s, words[i], transcription[i], translation[i], example[i]])
-    end
+    wholelot_array.each{|elem| table_arr.push(elem)}
     table_arr
   end
 

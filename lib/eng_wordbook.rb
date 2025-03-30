@@ -11,7 +11,7 @@ require_relative "docx" # содержит Input
 module EngWordbook
 
 
-  Input.link
+
   DocxFileWork.create_file
 end
 
