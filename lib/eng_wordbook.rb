@@ -14,8 +14,6 @@ module EngWordbook
     puts "Linux only"
     exit(1)
   end
-
-
   DocxFileWork.create_file
 end
 

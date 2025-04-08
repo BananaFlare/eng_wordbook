@@ -2,9 +2,10 @@ require_relative "./.env"
 require "json"
 require 'faraday'
 require_relative 'parsing'
+require 'tty-prompt'
 EnvVariables.set
 DEEPSEEK_API_KEY = ENV['DS_API_KEY']
-
+require_relative 'text_parser'
 module ApiDeepSeek
   API_URL = 'https://hubai.loe.gg/v1/chat/completions' # Example endpoint
 
@@ -29,14 +30,6 @@ module ApiDeepSeek
       "Error: #{response.status} - #{response.body}"
     end
 
-  end
-
-  def self.words_to_array
-    text = Parsing_page.page_content
-    prompt = "выдели из статьи слова, которые могут быть непонятны уровню английского A2. В ответе оставь только найденные слова в формате: номер по порядку ** слово или абреввиатура (расшифровать) ** транскрипция ** перевод ** пример из текста, без лишних слов, конец формата, следующая строка.#{text}"
-
-    response = call_deepseek_api(prompt)
-    p response
   end
 end
 

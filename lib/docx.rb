@@ -1,15 +1,19 @@
 # frozen_string_literal: true
 
 # input file connection
-require_relative "input"
+require_relative 'input'
 require_relative 'text_parser'
 require_relative 'api_deep_seek'
+require_relative 'word_list'
 # module for creation and interaction with docx file
 module DocxFileWork
+  WL = WordList.new
   def self.table_arr_generator
-    text =ApiDeepSeek.words_to_array
-    wholelot_array = TextParser.text_parser(text)
+    wholelot_array = WL.wholelot_array
     table_arr = [["№", "Word", "Transcription", "Translation", "Example"]]
+
+    wholelot_array = WL.exclude
+    wholelot_array = WL.include("Wholelot")
     wholelot_array.each{|elem| table_arr.push(elem)}
     table_arr
   end
@@ -24,4 +28,5 @@ module DocxFileWork
       end
     end
   end
+
 end
