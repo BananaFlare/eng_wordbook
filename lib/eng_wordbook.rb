@@ -7,7 +7,7 @@ require_relative "eng_wordbook/version"
 require "caracal"
 # подключение файла для создания docx
 require_relative "docx" # содержит Input
-require_relative 'driver_install'
+
 # empty
 module EngWordbook
   unless RUBY_PLATFORM.include?('linux')
