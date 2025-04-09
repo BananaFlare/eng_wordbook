@@ -1,7 +1,4 @@
 require "open3"
-require 'selenium-webdriver'
-require 'webdrivers'
-
 module DriverInstall
 def self.default_browser_linux
 
@@ -10,11 +7,6 @@ def self.default_browser_linux
   version = `firefox --version 2>/dev/null`.chomp
   version unless version.empty?
   [browser, version]
-end
-def self.try_standard_method
-  options = Selenium::WebDriver::Firefox::Options.new
-  # options.page_load_stategy = :eager
-  driver = Selenium::WebDriver.for :firefox,  options: options
 end
 def self.driver_install
   bv = default_browser_linux
