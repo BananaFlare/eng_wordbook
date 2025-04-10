@@ -13,7 +13,7 @@ gem 'stringio', '~> 3.1', '>= 3.1.6'
 gem "open3"
 gem "minitest", "~> 5.16"
 gem 'io-console', '~> 0.8.0'
-# gem "rubocop", "~> 1.21"
+gem "rubocop", "~> 1.21"
 gem "rubyzip", "~> 1.1"
 gem "selenium-webdriver", "~>4.0"," <4.11"
 gem "webdrivers"

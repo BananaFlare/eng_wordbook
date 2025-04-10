@@ -21,6 +21,9 @@ module DocxFileWork
   def self.create_file
     title = Input.title
     table_arr = table_arr_generator
+    if !File.directory?(__dir__+"/../tmp")
+      Dir.mkdir(__dir__+"/../tmp")
+    end
     Caracal::Document.save(__dir__+"/../tmp/#{title}.docx") do |doc|
       doc.h1 title.to_s
       doc.table table_arr do
