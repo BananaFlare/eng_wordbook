@@ -17,3 +17,4 @@ gem 'io-console', '~> 0.8.0'
 gem "rubyzip", "~> 1.1"
 gem "selenium-webdriver", "~>4.0"," <4.11"
 gem "webdrivers"
+gem "tty-prompt"
