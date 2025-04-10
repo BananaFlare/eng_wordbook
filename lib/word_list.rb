@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require_relative 'api_deep_seek'
 require_relative 'parsing'
-
+require 'pp'
 class WordList
   def initialize
     text = Parsing_page.page_content
@@ -72,5 +72,8 @@ class WordList
         elem[0] = (index + 1).to_s
       end
     end
+  end
+  def show_words
+    pp @wholelot_array
   end
 end

@@ -38,7 +38,9 @@ module Parsing_page
 
     element = driver.find_element(css: 'body')
 
-    element.text
+    text =element.text
+    driver.quit
+    text
 
   end
 end
