@@ -1,7 +1,7 @@
 require_relative 'input'
 require 'selenium-webdriver'
 require 'webdrivers'
-require_relative 'driver_install'
+
 
 module Parsing_page
   def self.page_content

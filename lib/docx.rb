@@ -8,6 +8,8 @@ require_relative 'word_list'
 # module for creation and interaction with docx file
 module DocxFileWork
   WL = WordList.new
+  #метод создания списка для таблицы
+  # @return [Array[Array]]
   def self.table_arr_generator
     wholelot_array = WL.wholelot_array
     WL.show_words

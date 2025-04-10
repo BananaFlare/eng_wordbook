@@ -1,23 +1,11 @@
 # тесты надо написать и разбить
-
+require_relative 'docx.rb'
 require "test_helper"
 # main test class
-class TestEngWordbook < Minitest::Test
-  def test_that_it_has_a_version_number
-    refute_nil ::EngWordbook::VERSION
-  end
+class ApiDeepSeekTest < Minitest::Test #надо посмотреть аналог moc
 
-  # it is for input testing
-  class InputTester < Minitest::Test
-    # посмотри регулярки и сделай
-    # link =
-    # title =
-    def link_correct?
-      assert assert_equal true, true
-    end
-
-    def title_correct?
-      assert true
-    end
-  end
+end
+class WordListTest < Minitest::Test
+  WL=WordList
+  def
 end
