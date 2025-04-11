@@ -7,5 +7,5 @@ class ApiDeepSeekTest < Minitest::Test #надо посмотреть анало
 end
 class WordListTest < Minitest::Test
   WL=WordList
-  def
+
 end
