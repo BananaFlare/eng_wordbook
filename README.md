@@ -1,10 +1,18 @@
 # EngWordbook
-Этот гем предназначен для создания словаря по статье из интернета и вывода ее в формате таблицы в docx MS Word
+Linux only because lots of linux dependencies required
+
+
+This gem is designed to create a dictionary from an online article and output it in a table format in a Microsoft Word docx file.
+
+
 ## Requirements
-system packages: gcc,make,ruby-psych,ruby-dev, libyaml-dev
+system packages: gcc, make, ruby-psych, ruby-dev, libyaml-dev
+
+
 gems: bundler
-Нужен файл .env.rb который можно попросить у создателя или сделать самому,
-если у вас есть ключ для Deepseek api
+
+
+You need a .env.rb file, which you can request from the creator or create yourself if you have a Deepseek API key.
 ```bash
  module EnvVariables
   def self.set
@@ -13,8 +21,8 @@ gems: bundler
 end
 ```
 ## Installation
-1. переместить .env.rb файл в lib директорию
-2. выполните команды
+1. Move the .env.rb file to the lib directory.
+2. Run the following commands:
 ```bash
  sudo bundle
  gem build
@@ -25,14 +33,16 @@ end
 rake
 
 
-введите ссылку на сайт со статьей
-введите имя ворд документа
+Sorry, no other options are available yet.
 
 
-по желанию добавьте или исключите слова из предложенных
+Enter the URL of the article website.
+Enter the name of the Word document.
+
+Optionally, add or exclude words from the suggested list.
 
 
-извините, других вариантов пока нет
+
 
 
 ## Contributing

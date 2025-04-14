@@ -13,9 +13,9 @@ module Input
   def self.link
     p "input link"
     link = gets.chomp
-    patern = /^((ftp|http|https):\/\/)?(www\.)?([A-Za-zА-Яа-я0-9]{1}[A-Za-zА-Яа-я0-9\-]*\.?)*\.{1}[A-Za-zА-Яа-я0-9-]{2,8}(\/([\w#!:.?+=&%@!\-\/])*)?/
-    raise LinkError unless link.match?(patern)
-
+    pattern = /^((ftp|http|https):\/\/)?(www\.)?([A-Za-zА-Яа-я0-9]{1}[A-Za-zА-Яа-я0-9\-]*\.?)*\.{1}[A-Za-zА-Яа-я0-9-]{2,8}(\/([\w#!:.?+=&%@!\-\/])*)?/
+    pattern_test=/file:\/\/\/[^\s]+\.html/
+    raise LinkError unless link.match?(pattern) || link.match?(pattern_test)
     link
   end
   class InputError < StandardError;

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="github-links">
+    <a href="https://github.com/angular/angular/edit/main/aio/content/guide/what-is-angular.md?message=docs%3A%20describe%20your%20change..." aria-label="Suggest Edits" title="Suggest Edits"><i class="material-icons" aria-hidden="true" role="img">mode_edit</i></a>
+</div>
+<div class="content">
+    <h1 id="what-is-angular">What is Angular?<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/what-is-angular#what-is-angular"><i class="material-icons">link</i></a></h1><aio-toc class="embedded" ng-version="15.2.0-next.4"><div class="toc-inner no-print collapsed ng-star-inserted"><!----><button type="button" title="Expand/collapse contents" aria-label="Expand/collapse contents" class="toc-heading embedded secondary ng-star-inserted" aria-pressed="false"> Contents <mat-icon role="img" svgicon="keyboard_arrow_right" class="mat-icon notranslate rotating-icon collapsed mat-icon-no-color" aria-hidden="true" data-mat-icon-type="svg" data-mat-icon-name="keyboard_arrow_right"><svg focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"></path>
+</svg></mat-icon></button><!----><ul class="toc-list embedded"><!----><!----><li class="h2 ng-star-inserted" title="Angular applications: The essentials"><a href="guide/what-is-angular#angular-applications-the-essentials">Angular applications: The essentials</a></li><!----><!----><li class="h3 ng-star-inserted" title="Components"><a href="guide/what-is-angular#components">Components</a></li><!----><!----><li class="h3 ng-star-inserted" title="Templates"><a href="guide/what-is-angular#templates">Templates</a></li><!----><!----><li class="h3 secondary ng-star-inserted" title="Dependency injection"><a href="guide/what-is-angular#dependency-injection">Dependency injection</a></li><!----><!----><li class="h2 secondary ng-star-inserted" title="Angular CLI"><a href="guide/what-is-angular#angular-cli">Angular CLI</a></li><!----><!----><li class="h2 secondary ng-star-inserted" title="First-party libraries"><a href="guide/what-is-angular#first-party-libraries">First-party libraries</a></li><!----><!----><li class="h2 secondary ng-star-inserted" title="Next steps"><a href="guide/what-is-angular#next-steps">Next steps</a></li><!----><!----><!----></ul><button type="button" title="Expand/collapse contents" aria-label="Expand/collapse contents" class="toc-more-items embedded material-icons collapsed ng-star-inserted" aria-pressed="false"></button><!----></div><!----></aio-toc>
+    <p>This topic can help you understand Angular: what Angular is, what advantages it provides, and what you might expect as you start to build your applications.</p>
+    <p>Angular is a development platform, built on <a href="https://www.typescriptlang.org">TypeScript</a>.
+        As a platform, Angular includes:</p>
+    <ul>
+        <li>A component-based framework for building scalable web applications</li>
+        <li>A collection of well-integrated libraries that cover a wide variety of features, including routing, forms management, client-server communication, and more</li>
+        <li>A suite of developer tools to help you develop, build, test, and update your code</li>
+    </ul>
+    <p>With Angular, you're taking advantage of a platform that can scale from single-developer projects to enterprise-level applications.
+        Angular is designed to make updating as straightforward as possible, so take advantage of the latest developments with minimal effort.
+        Best of all, the Angular ecosystem consists of a diverse group of over 1.7 million developers, library authors, and content creators.</p>
+    <div class="alert is-helpful">
+        <p>See the <live-example name="what-is-angular" ng-version="15.2.0-next.4"><span style="display: none;"></span><span><!----><!----><span class="ng-star-inserted"><a target="_blank" title="live example" href="generated/live-examples/what-is-angular/stackblitz.html">live example</a><span class="ng-star-inserted"> / <a download="" title="Download example" href="generated/zips/what-is-angular/what-is-angular.zip">download example</a></span><!----></span><!----></span></live-example> for a working example containing the code snippets in this guide.</p>
+    </div>
+    <p><a id="essentials"></a></p>
+    <h2 id="angular-applications-the-essentials">Angular applications: The essentials<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/what-is-angular#angular-applications-the-essentials"><i class="material-icons">link</i></a></h2>
+    <p>This section explains the core ideas behind Angular.
+        Understanding these ideas can help you design and build your applications more effectively.</p>
+    <p><a id="components"></a></p>
+    <h3 id="components">Components<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/what-is-angular#components"><i class="material-icons">link</i></a></h3>
+    <p>Components are the building blocks that compose an application.
+        A component includes a TypeScript class with a <code>@<a href="api/core/Component" class="code-anchor">Component</a>()</code> decorator, an HTML template, and styles.
+        The <code>@<a href="api/core/Component" class="code-anchor">Component</a>()</code> decorator specifies the following Angular-specific information:</p>
+    <ul>
+        <li>
+            <p>A CSS selector that defines how the component is used in a template.
+                HTML elements in your template that match this selector become instances of the component.</p>
+        </li>
+        <li>
+            <p>An HTML template that instructs Angular how to render the component</p>
+        </li>
+        <li>
+            <p>An optional set of CSS styles that define the appearance of the template's HTML elements</p>
+        </li>
+    </ul>
+    <p>The following is a minimal Angular component.</p>
+    <code-example format="typescript" language="typescript" path="what-is-angular/src/app/hello-world/hello-world.component.ts" ng-version="15.2.0-next.4"><div style="display: none;"></div><!----><aio-code class="simple-code"><pre class="lang-typescript prettyprint">      <button title="Copy code snippet" class="material-icons copy-button no-print ng-star-inserted" aria-label="">
+        <span aria-hidden="true">content_copy</span>
+      </button><!---->
+      <code class="animated fadeIn"><span class="kwd">import</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><a href="api/core/Component" class="code-anchor"><span class="typ">Component</span></a><span class="pln"> </span><span class="pun">}</span><span class="pln"> from </span><span class="str">'@angular/core'</span><span class="pun">;</span><span class="pln">
+
+</span><span class="lit">@</span><a href="api/core/Component" class="code-anchor"><span class="lit">Component</span></a><span class="pun">({</span><span class="pln">
+  selector</span><span class="pun">:</span><span class="pln"> </span><span class="str">'hello-world'</span><span class="pun">,</span><span class="pln">
+  template</span><span class="pun">:</span><span class="pln"> </span><span class="pun">`</span><span class="pln">
+    </span><span class="pun">&lt;</span><span class="pln">h2</span><span class="pun">&gt;</span><span class="typ">Hello</span><span class="pln"> </span><span class="typ">World</span><span class="pun">&lt;/</span><span class="pln">h2</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="pun">&lt;</span><span class="pln">p</span><span class="pun">&gt;</span><span class="typ">This</span><span class="pln"> is my first component</span><span class="pun">!&lt;/</span><span class="pln">p</span><span class="pun">&gt;</span><span class="pln">
+  </span><span class="pun">`</span><span class="pln">
+</span><span class="pun">})</span><span class="pln">
+</span><span class="kwd">export</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">HelloWorldComponent</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="com">// The code in this class drives the component's behavior.</span><span class="pln">
+</span><span class="pun">}</span></code>
+    </pre></aio-code></code-example>
+    <p>To use this component, you write the following in a template:</p>
+    <code-example format="html" language="html" path="what-is-angular/src/app/app.component.html" region="hello-world-selector" ng-version="15.2.0-next.4"><div style="display: none;"></div><!----><aio-code class="simple-code"><pre class="lang-html prettyprint">      <button title="Copy code snippet" class="material-icons copy-button no-print ng-star-inserted" aria-label="">
+        <span aria-hidden="true">content_copy</span>
+      </button><!---->
+      <code class="animated fadeIn"><span class="tag">&lt;hello-world&gt;&lt;/hello-world&gt;</span></code>
+    </pre></aio-code></code-example>
+    <p>When Angular renders this component, the resulting DOM looks like this:</p>
+    <code-example format="html" language="html" path="what-is-angular/src/app/hello-world-example.html" ng-version="15.2.0-next.4"><div style="display: none;"></div><!----><aio-code class="simple-code"><pre class="lang-html prettyprint">      <button title="Copy code snippet" class="material-icons copy-button no-print ng-star-inserted" aria-label="">
+        <span aria-hidden="true">content_copy</span>
+      </button><!---->
+      <code class="animated fadeIn"><span class="tag">&lt;hello-world&gt;</span><span class="pln">
+    </span><span class="tag">&lt;h2&gt;</span><span class="pln">Hello World</span><span class="tag">&lt;/h2&gt;</span><span class="pln">
+    </span><span class="tag">&lt;p&gt;</span><span class="pln">This is my first component!</span><span class="tag">&lt;/p&gt;</span><span class="pln">
+</span><span class="tag">&lt;/hello-world&gt;</span></code>
+    </pre></aio-code></code-example>
+    <p>Angular's component model offers strong encapsulation and an intuitive application structure.
+        Components also make your application painless to unit test and can improve the general readability of your code.</p>
+    <p>For more information on what to do with components, see the <a href="guide/component-overview">Components</a> section.</p>
+    <p><a id="templates"></a></p>
+    <h3 id="templates">Templates<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/what-is-angular#templates"><i class="material-icons">link</i></a></h3>
+    <!-- vale Angular.Google_WordListWarnings = NO -->
+    <p>Every component has an HTML template that declares how that component renders.
+        You define this template either inline or by file path.</p>
+    <!-- vale Angular.Google_WordListWarnings = YES -->
+    <p>Angular adds syntax elements that extend HTML so you can insert dynamic values from your component.
+        Angular automatically updates the rendered DOM when your component's state changes.
+        One application of this feature is inserting dynamic text, as shown in the following example.</p>
+    <code-example format="html" language="html" path="what-is-angular/src/app/hello-world-interpolation/hello-world-interpolation.component.html" region="say-hello" ng-version="15.2.0-next.4"><div style="display: none;"></div><!----><aio-code class="simple-code"><pre class="lang-html prettyprint">      <button title="Copy code snippet" class="material-icons copy-button no-print ng-star-inserted" aria-label="">
+        <span aria-hidden="true">content_copy</span>
+      </button><!---->
+      <code class="animated fadeIn"><span class="tag">&lt;p&gt;</span><span class="pln">{{ message }}</span><span class="tag">&lt;/p&gt;</span></code>
+    </pre></aio-code></code-example>
+    <p>The value for message comes from the component class:</p>
+    <code-example format="typescript" language="typescript" path="what-is-angular/src/app/hello-world-interpolation/hello-world-interpolation.component.ts" ng-version="15.2.0-next.4"><div style="display: none;"></div><!----><aio-code class="simple-code"><pre class="lang-typescript prettyprint">      <button title="Copy code snippet" class="material-icons copy-button no-print ng-star-inserted" aria-label="">
+        <span aria-hidden="true">content_copy</span>
+      </button><!---->
+      <code class="animated fadeIn"><span class="kwd">import</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><a href="api/core/Component" class="code-anchor"><span class="typ">Component</span></a><span class="pln"> </span><span class="pun">}</span><span class="pln"> from </span><span class="str">'@angular/core'</span><span class="pun">;</span><span class="pln">
+
+</span><span class="lit">@</span><a href="api/core/Component" class="code-anchor"><span class="lit">Component</span></a><span class="pln"> </span><span class="pun">({</span><span class="pln">
+  selector</span><span class="pun">:</span><span class="pln"> </span><span class="str">'hello-world-interpolation'</span><span class="pun">,</span><span class="pln">
+  templateUrl</span><span class="pun">:</span><span class="pln"> </span><span class="str">'./hello-world-interpolation.component.html'</span><span class="pln">
+</span><span class="pun">})</span><span class="pln">
+</span><span class="kwd">export</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">HelloWorldInterpolationComponent</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    message </span><span class="pun">=</span><span class="pln"> </span><span class="str">'Hello, World!'</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code>
+    </pre></aio-code></code-example>
+    <p>When the application loads the component and its template, the user sees the following:</p>
+    <code-example format="shell" language="html" ng-version="15.2.0-next.4"><div style="display: none;"></div><!----><aio-code class="simple-code"><pre class="lang-html prettyprint">      <button title="Copy code snippet" class="material-icons copy-button no-print ng-star-inserted" aria-label="">
+        <span aria-hidden="true">content_copy</span>
+      </button><!---->
+      <code class="animated fadeIn"><span class="tag">&lt;p&gt;</span><span class="pln">Hello, World!</span><span class="tag">&lt;/p&gt;</span></code>
+    </pre></aio-code></code-example>
+    <p>Notice the use of double curly braces—they instruct Angular to interpolate the contents within them.</p>
+    <p>Angular also supports property bindings, to help you set values for properties and attributes of HTML elements and pass values to your application's presentation logic.</p>
+    <code-example format="html" language="html" path="what-is-angular/src/app/hello-world-bindings/hello-world-bindings.component.html" region="bindings" ng-version="15.2.0-next.4"><div style="display: none;"></div><!----><aio-code class="simple-code"><pre class="lang-html prettyprint">      <button title="Copy code snippet" class="material-icons copy-button no-print ng-star-inserted" aria-label="">
+        <span aria-hidden="true">content_copy</span>
+      </button><!---->
+      <code class="animated fadeIn"><span class="tag">&lt;p</span><span class="pln">
+  [</span><span class="atn">id</span><span class="pln">]</span><span class="pun">=</span><span class="atv">"sayHelloId"</span><span class="pln">
+  [</span><span class="atn">style</span><span class="pln">.</span><span class="atn">color</span><span class="pln">]</span><span class="pun">=</span><span class="atv">"fontColor"</span><span class="tag">&gt;</span><span class="pln">
+  You can set my color in the component!
+</span><span class="tag">&lt;/p&gt;</span></code>
+    </pre></aio-code></code-example>
+    <p>Notice the use of the square brackets—that syntax indicates that you're binding the property or attribute to a value in the component class.</p>
+    <p>Declare event listeners to listen for and respond to user actions such as keystrokes, mouse movements, clicks, and touches.
+        You declare an event listener by specifying the event name in parentheses:</p>
+    <code-example format="html" language="html" path="what-is-angular/src/app/hello-world-bindings/hello-world-bindings.component.html" region="event-binding" ng-version="15.2.0-next.4"><div style="display: none;"></div><!----><aio-code class="simple-code"><pre class="lang-html prettyprint">      <button title="Copy code snippet" class="material-icons copy-button no-print ng-star-inserted" aria-label="">
+        <span aria-hidden="true">content_copy</span>
+      </button><!---->
+      <code class="animated fadeIn"><span class="tag">&lt;button</span><span class="pln">
+  </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"button"</span><span class="pln">
+  [</span><span class="atn">disabled</span><span class="pln">]</span><span class="pun">=</span><span class="atv">"canClick"</span><span class="pln">
+  (</span><span class="atn">click</span><span class="pln">)</span><span class="pun">=</span><span class="atv">"sayMessage()"</span><span class="tag">&gt;</span><span class="pln">
+  Trigger alert message
+</span><span class="tag">&lt;/button&gt;</span></code>
+    </pre></aio-code></code-example>
+    <p>The preceding example calls a method, which is defined in the component class:</p>
+    <code-example format="typescript" language="typescript" path="what-is-angular/src/app/hello-world-bindings/hello-world-bindings.component.ts" region="method" ng-version="15.2.0-next.4"><div style="display: none;"></div><!----><aio-code class="simple-code"><pre class="lang-typescript prettyprint">      <button title="Copy code snippet" class="material-icons copy-button no-print ng-star-inserted" aria-label="">
+        <span aria-hidden="true">content_copy</span>
+      </button><!---->
+      <code class="animated fadeIn"><span class="pln">sayMessage</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  alert</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">message</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span></code>
+    </pre></aio-code></code-example>
+    <p>The following is a combined example of Interpolation, Property Binding, and Event Binding within an Angular template:</p>
+    <code-tabs linenums="true" ng-version="15.2.0-next.4"><div style="display: none;"></div><mat-card class="mat-card mat-focus-indicator"><mat-tab-group class="mat-tab-group code-tab-group mat-primary"><mat-tab-header class="mat-tab-header"><button aria-hidden="true" type="button" mat-ripple="" tabindex="-1" class="mat-ripple mat-tab-header-pagination mat-tab-header-pagination-before mat-elevation-z4 mat-tab-header-pagination-disabled" disabled=""><div class="mat-tab-header-pagination-chevron"></div></button><div class="mat-tab-label-container"><div role="tablist" class="mat-tab-list" style="transform: translateX(0px);"><div class="mat-tab-labels"><div role="tab" mattablabelwrapper="" mat-ripple="" cdkmonitorelementfocus="" class="mat-ripple mat-tab-label mat-focus-indicator mat-tab-label-active ng-star-inserted" id="mat-tab-label-0-0" tabindex="0" aria-posinset="1" aria-setsize="2" aria-controls="mat-tab-content-0-0" aria-selected="true" aria-disabled="false"><div class="mat-tab-label-content"><span class="ng-star-inserted">hello-world-bindings.component.ts</span><!----><!----><!----></div></div><div role="tab" mattablabelwrapper="" mat-ripple="" cdkmonitorelementfocus="" class="mat-ripple mat-tab-label mat-focus-indicator ng-star-inserted" id="mat-tab-label-0-1" tabindex="-1" aria-posinset="2" aria-setsize="2" aria-controls="mat-tab-content-0-1" aria-selected="false" aria-disabled="false"><div class="mat-tab-label-content"><span class="ng-star-inserted">hello-world-bindings.component.html</span><!----><!----><!----></div></div><!----></div><mat-ink-bar class="mat-ink-bar" style="visibility: visible; left: 0px; width: 267px;"></mat-ink-bar></div></div><button aria-hidden="true" type="button" mat-ripple="" tabindex="-1" class="mat-ripple mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-tab-header-pagination-disabled" disabled=""><div class="mat-tab-header-pagination-chevron"></div></button></mat-tab-header><div class="mat-tab-body-wrapper"><mat-tab-body role="tabpanel" class="mat-tab-body ng-tns-c63-2 mat-tab-body-active ng-star-inserted" id="mat-tab-content-0-0" aria-labelledby="mat-tab-label-0-0"><div cdkscrollable="" class="mat-tab-body-content ng-tns-c63-2 ng-trigger ng-trigger-translateTab" style="transform: none;"><!----><aio-code class="ng-star-inserted" style=""><pre class="lang- prettyprint">      <button title="Copy code snippet" class="material-icons copy-button no-print ng-star-inserted" aria-label="Copy code snippet from hello-world-bindings.component.ts">
+        <span aria-hidden="true">content_copy</span>
+      </button><!---->
+      <code class="animated fadeIn"><ol class="linenums"><li class="L0"><span class="kwd">import</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><a href="api/core/Component" class="code-anchor"><span class="typ">Component</span></a><span class="pln"> </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">from</span><span class="pln"> </span><span class="str">'@angular/core'</span><span class="pun">;</span></li><li class="L1"><span class="pln">&nbsp;</span></li><li class="L2"><span class="lit">@</span><a href="api/core/Component" class="code-anchor"><span class="lit">Component</span></a><span class="pln"> </span><span class="pun">({</span></li><li class="L3"><span class="pln">  selector</span><span class="pun">:</span><span class="pln"> </span><span class="str">'hello-world-bindings'</span><span class="pun">,</span></li><li class="L4"><span class="pln">  templateUrl</span><span class="pun">:</span><span class="pln"> </span><span class="str">'./hello-world-bindings.component.html'</span></li><li class="L5"><span class="pun">})</span></li><li class="L6"><span class="kwd">export</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">HelloWorldBindingsComponent</span><span class="pln"> </span><span class="pun">{</span></li><li class="L7"><span class="pln">  fontColor </span><span class="pun">=</span><span class="pln"> </span><span class="str">'blue'</span><span class="pun">;</span></li><li class="L8"><span class="pln">  sayHelloId </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span></li><li class="L9"><span class="pln">  canClick </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span></li><li class="L0"><span class="pln">  message </span><span class="pun">=</span><span class="pln"> </span><span class="str">'Hello, World'</span><span class="pun">;</span></li><li class="L1"><span class="pln">&nbsp;</span></li><li class="L2"><span class="pln">  sayMessage</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">    alert</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">message</span><span class="pun">);</span></li><li class="L4"><span class="pln">  </span><span class="pun">}</span></li><li class="L5"><span class="pun">}</span></li></ol></code>
+    </pre></aio-code><!----></div></mat-tab-body><mat-tab-body role="tabpanel" class="mat-tab-body ng-tns-c63-3 ng-star-inserted" id="mat-tab-content-0-1" aria-labelledby="mat-tab-label-0-1"><div cdkscrollable="" class="mat-tab-body-content ng-tns-c63-3 ng-trigger ng-trigger-translateTab" style="transform: translate3d(100%, 0px, 0px); min-height: 1px; visibility: hidden;"><!----></div></mat-tab-body><!----></div></mat-tab-group></mat-card></code-tabs>
+    <p>Add features to your templates by using <a href="guide/built-in-directives">directives</a>.
+        The most popular directives in Angular are <code>*<a href="api/common/NgIf" class="code-anchor">ngIf</a></code> and <code>*<a href="api/common/NgFor" class="code-anchor">ngFor</a></code>.
+        Use directives to perform a variety of tasks, such as dynamically modifying the DOM structure.
+        And create your own custom directives to create great user experiences.</p>
+    <p>The following code is an example of the <code>*<a href="api/common/NgIf" class="code-anchor">ngIf</a></code> directive.</p>
+    <code-tabs linenums="true" ng-version="15.2.0-next.4"><div style="display: none;"></div><mat-card class="mat-card mat-focus-indicator"><mat-tab-group class="mat-tab-group code-tab-group mat-primary"><mat-tab-header class="mat-tab-header"><button aria-hidden="true" type="button" mat-ripple="" tabindex="-1" class="mat-ripple mat-tab-header-pagination mat-tab-header-pagination-before mat-elevation-z4 mat-tab-header-pagination-disabled" disabled=""><div class="mat-tab-header-pagination-chevron"></div></button><div class="mat-tab-label-container"><div role="tablist" class="mat-tab-list" style="transform: translateX(0px);"><div class="mat-tab-labels"><div role="tab" mattablabelwrapper="" mat-ripple="" cdkmonitorelementfocus="" class="mat-ripple mat-tab-label mat-focus-indicator mat-tab-label-active ng-star-inserted" id="mat-tab-label-1-0" tabindex="0" aria-posinset="1" aria-setsize="2" aria-controls="mat-tab-content-1-0" aria-selected="true" aria-disabled="false"><div class="mat-tab-label-content"><span class="ng-star-inserted">hello-world-ngif.component.ts</span><!----><!----><!----></div></div><div role="tab" mattablabelwrapper="" mat-ripple="" cdkmonitorelementfocus="" class="mat-ripple mat-tab-label mat-focus-indicator ng-star-inserted" id="mat-tab-label-1-1" tabindex="-1" aria-posinset="2" aria-setsize="2" aria-controls="mat-tab-content-1-1" aria-selected="false" aria-disabled="false"><div class="mat-tab-label-content"><span class="ng-star-inserted">hello-world-ngif.component.html</span><!----><!----><!----></div></div><!----></div><mat-ink-bar class="mat-ink-bar" style="visibility: visible; left: 0px; width: 238px;"></mat-ink-bar></div></div><button aria-hidden="true" type="button" mat-ripple="" tabindex="-1" class="mat-ripple mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-tab-header-pagination-disabled" disabled=""><div class="mat-tab-header-pagination-chevron"></div></button></mat-tab-header><div class="mat-tab-body-wrapper"><mat-tab-body role="tabpanel" class="mat-tab-body ng-tns-c63-4 mat-tab-body-active ng-star-inserted" id="mat-tab-content-1-0" aria-labelledby="mat-tab-label-1-0"><div cdkscrollable="" class="mat-tab-body-content ng-tns-c63-4 ng-trigger ng-trigger-translateTab" style="transform: none;"><!----><aio-code class="ng-star-inserted" style=""><pre class="lang- prettyprint">      <button title="Copy code snippet" class="material-icons copy-button no-print ng-star-inserted" aria-label="Copy code snippet from hello-world-ngif.component.ts">
+        <span aria-hidden="true">content_copy</span>
+      </button><!---->
+      <code class="animated fadeIn"><ol class="linenums"><li class="L0"><span class="kwd">import</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><a href="api/core/Component" class="code-anchor"><span class="typ">Component</span></a><span class="pln"> </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">from</span><span class="pln"> </span><span class="str">'@angular/core'</span><span class="pun">;</span></li><li class="L1"><span class="pln">&nbsp;</span></li><li class="L2"><span class="lit">@</span><a href="api/core/Component" class="code-anchor"><span class="lit">Component</span></a><span class="pun">({</span></li><li class="L3"><span class="pln">  selector</span><span class="pun">:</span><span class="pln"> </span><span class="str">'hello-world-ngif'</span><span class="pun">,</span></li><li class="L4"><span class="pln">  templateUrl</span><span class="pun">:</span><span class="pln"> </span><span class="str">'./hello-world-ngif.component.html'</span></li><li class="L5"><span class="pun">})</span></li><li class="L6"><span class="kwd">export</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">HelloWorldNgIfComponent</span><span class="pln"> </span><span class="pun">{</span></li><li class="L7"><span class="pln">  message </span><span class="pun">=</span><span class="pln"> </span><span class="str">"I'm read only!"</span><span class="pun">;</span></li><li class="L8"><span class="pln">  canEdit </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span></li><li class="L9"><span class="pln">&nbsp;</span></li><li class="L0"><span class="pln">  onEditClick</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">    </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">canEdit </span><span class="pun">=</span><span class="pln"> </span><span class="pun">!</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">canEdit</span><span class="pun">;</span></li><li class="L2"><span class="pln">    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">canEdit</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">      </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">message </span><span class="pun">=</span><span class="pln"> </span><span class="str">'You can edit me!'</span><span class="pun">;</span></li><li class="L4"><span class="pln">    </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">      </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">message </span><span class="pun">=</span><span class="pln"> </span><span class="str">"I'm read only!"</span><span class="pun">;</span></li><li class="L6"><span class="pln">    </span><span class="pun">}</span></li><li class="L7"><span class="pln">  </span><span class="pun">}</span></li><li class="L8"><span class="pun">}</span></li></ol></code>
+    </pre></aio-code><!----></div></mat-tab-body><mat-tab-body role="tabpanel" class="mat-tab-body ng-tns-c63-5 ng-star-inserted" id="mat-tab-content-1-1" aria-labelledby="mat-tab-label-1-1"><div cdkscrollable="" class="mat-tab-body-content ng-tns-c63-5 ng-trigger ng-trigger-translateTab" style="transform: translate3d(100%, 0px, 0px); min-height: 1px; visibility: hidden;"><!----></div></mat-tab-body><!----></div></mat-tab-group></mat-card></code-tabs>
+    <p>Angular's declarative templates let you cleanly separate your application's logic from its presentation.
+        Templates are based on standard HTML, for ease in building, maintaining, and updating.</p>
+    <p>For more information on templates, see the <a href="guide/template-syntax">Templates</a> section.</p>
+    <p><a id="di"></a></p>
+    <h3 id="dependency-injection">Dependency injection<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/what-is-angular#dependency-injection"><i class="material-icons">link</i></a></h3>
+    <p>Dependency injection lets you declare the dependencies of your TypeScript classes without taking care of their instantiation.
+        Instead, Angular handles the instantiation for you.
+        This design pattern lets you write more testable and flexible code.
+        Understanding dependency injection is not critical to start using Angular, but it is strongly recommended as a best practice. Many aspects of Angular take advantage of it to some degree.</p>
+    <p>To illustrate how dependency injection works, consider the following example.
+        The first file, <code>logger.service.ts</code>, defines a <code>Logger</code> class.
+        This class contains a <code>writeCount</code> function that logs a number to the console.</p>
+    <code-example format="typescript" language="typescript" path="what-is-angular/src/app/logger.service.ts" ng-version="15.2.0-next.4"><div style="display: none;"></div><!----><aio-code class="simple-code"><pre class="lang-typescript prettyprint">      <button title="Copy code snippet" class="material-icons copy-button no-print ng-star-inserted" aria-label="">
+        <span aria-hidden="true">content_copy</span>
+      </button><!---->
+      <code class="animated fadeIn"><span class="kwd">import</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><a href="api/core/Injectable" class="code-anchor"><span class="typ">Injectable</span></a><span class="pln"> </span><span class="pun">}</span><span class="pln"> from </span><span class="str">'@angular/core'</span><span class="pun">;</span><span class="pln">
+
+</span><span class="lit">@</span><a href="api/core/Injectable" class="code-anchor"><span class="lit">Injectable</span></a><span class="pun">({</span><span class="pln">providedIn</span><span class="pun">:</span><span class="pln"> </span><span class="str">'root'</span><span class="pun">})</span><span class="pln">
+</span><span class="kwd">export</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Logger</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  writeCount</span><span class="pun">(</span><span class="pln">count</span><span class="pun">:</span><span class="pln"> number</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    console</span><span class="pun">.</span><span class="pln">warn</span><span class="pun">(</span><span class="pln">count</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code>
+    </pre></aio-code></code-example>
+    <p>Next, the <code>hello-world-di.component.ts</code> file defines an Angular component.
+        This component contains a button that uses the <code>writeCount</code> function of the Logger class.
+        To access that function, the <code>Logger</code> service is injected into the <code>HelloWorldDI</code> class by adding <code>private logger: Logger</code> to the constructor.</p>
+    <code-example format="typescript" language="typescript" path="what-is-angular/src/app/hello-world-di/hello-world-di.component.ts" ng-version="15.2.0-next.4"><div style="display: none;"></div><!----><aio-code class="simple-code"><pre class="lang-typescript prettyprint">      <button title="Copy code snippet" class="material-icons copy-button no-print ng-star-inserted" aria-label="">
+        <span aria-hidden="true">content_copy</span>
+      </button><!---->
+      <code class="animated fadeIn"><span class="kwd">import</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><a href="api/core/Component" class="code-anchor"><span class="typ">Component</span></a><span class="pln"> </span><span class="pun">}</span><span class="pln"> from </span><span class="str">'@angular/core'</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="typ">Logger</span><span class="pln"> </span><span class="pun">}</span><span class="pln"> from </span><span class="str">'../logger.service'</span><span class="pun">;</span><span class="pln">
+
+</span><span class="lit">@</span><a href="api/core/Component" class="code-anchor"><span class="lit">Component</span></a><span class="pun">({</span><span class="pln">
+  selector</span><span class="pun">:</span><span class="pln"> </span><span class="str">'hello-world-di'</span><span class="pun">,</span><span class="pln">
+  templateUrl</span><span class="pun">:</span><span class="pln"> </span><span class="str">'./hello-world-di.component.html'</span><span class="pln">
+</span><span class="pun">})</span><span class="pln">
+</span><span class="kwd">export</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">HelloWorldDependencyInjectionComponent</span><span class="pln">  </span><span class="pun">{</span><span class="pln">
+  count </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+
+  </span><span class="kwd">constructor</span><span class="pun">(</span><span class="kwd">private</span><span class="pln"> logger</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Logger</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+
+  onLogMe</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">logger</span><span class="pun">.</span><span class="pln">writeCount</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">count</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">count</span><span class="pun">++;</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code>
+    </pre></aio-code></code-example>
+    <p>For more information about dependency injection and Angular, see the <a href="guide/dependency-injection">Dependency injection in Angular</a> section.</p>
+    <p><a id="cli"></a></p>
+    <h2 id="angular-cli">Angular CLI<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/what-is-angular#angular-cli"><i class="material-icons">link</i></a></h2>
+    <p>The Angular CLI is the fastest, straightforward, and recommended way to develop Angular applications.
+        The Angular CLI makes some tasks trouble-free.
+        For example:</p>
+    <!-- vale Angular.Google_WordListSuggestions = NO -->
+    <table>
+        <thead>
+        <tr>
+            <th align="left">Command</th>
+            <th align="left">Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td align="left"><a href="cli/build">ng build</a></td>
+            <td align="left">Compiles an Angular application into an output directory.</td>
+        </tr>
+        <tr>
+            <td align="left"><a href="cli/serve">ng serve</a></td>
+            <td align="left">Builds and serves your application, rebuilding on file changes.</td>
+        </tr>
+        <tr>
+            <td align="left"><a href="cli/generate">ng generate</a></td>
+            <td align="left">Generates or modifies files based on a schematic.</td>
+        </tr>
+        <tr>
+            <td align="left"><a href="cli/test">ng test</a></td>
+            <td align="left">Runs unit tests on a given project.</td>
+        </tr>
+        <tr>
+            <td align="left"><a href="cli/e2e">ng e2e</a></td>
+            <td align="left">Builds and serves an Angular application, then runs end-to-end tests.</td>
+        </tr>
+        </tbody>
+    </table>
+    <!-- vale Angular.Google_WordListSuggestions = YES -->
+    <p>The Angular CLI is a valuable tool for building out your applications.</p>
+    <p>For more information about the Angular CLI, see the <a href="cli">Angular CLI Reference</a> section.</p>
+    <p><a id="1p-libraries"></a></p>
+    <h2 id="first-party-libraries">First-party libraries<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/what-is-angular#first-party-libraries"><i class="material-icons">link</i></a></h2>
+    <p>The section, <a href="guide/what-is-angular#essentials">Angular applications: the essentials</a>, provides a brief overview of a couple of the key architectural elements that are used when building Angular applications.
+        The many benefits of Angular really become clear when your application grows and you want to add functions such as site navigation or user input.
+        Use the Angular platform to incorporate one of the many first-party libraries that Angular provides.</p>
+    <p>Some of the libraries available to you include:</p>
+    <!-- vale Angular.Google_Acronyms = NO -->
+    <table>
+        <thead>
+        <tr>
+            <th align="left">Library</th>
+            <th align="left">Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td align="left"><a href="guide/router">Angular Router</a></td>
+            <td align="left">Advanced client-side navigation and routing based on Angular components. Supports lazy-loading, nested routes, custom path matching, and more.</td>
+        </tr>
+        <tr>
+            <td align="left"><a href="guide/forms-overview">Angular Forms</a></td>
+            <td align="left">Uniform system for form participation and validation.</td>
+        </tr>
+        <tr>
+            <td align="left"><a href="guide/http">Angular HttpClient</a></td>
+            <td align="left">Robust HTTP client that can power more advanced client-server communication.</td>
+        </tr>
+        <tr>
+            <td align="left"><a href="guide/animations">Angular Animations</a></td>
+            <td align="left">Rich system for driving animations based on application state.</td>
+        </tr>
+        <tr>
+            <td align="left"><a href="guide/service-worker-intro">Angular PWA</a></td>
+            <td align="left">Tools for building Progressive Web Applications (PWA) including a service worker and Web application manifest.</td>
+        </tr>
+        <tr>
+            <td align="left"><a href="guide/schematics">Angular Schematics</a></td>
+            <td align="left">Automated scaffolding, refactoring, and update tools that simplify development at large scale.</td>
+        </tr>
+        </tbody>
+    </table>
+    <!-- vale Angular.Google_Acronyms = YES -->
+    <p>These libraries expand your application's capabilities while also letting you focus more on the features that make your application unique.
+        Add these libraries knowing that they're designed to integrate flawlessly into and update simultaneously with the Angular framework.</p>
+    <p>These libraries are only required when they can help you add features to your applications or solve a particular problem.</p>
+    <h2 id="next-steps">Next steps<a title="Link to this heading" class="header-link" aria-hidden="true" href="guide/what-is-angular#next-steps"><i class="material-icons">link</i></a></h2>
+    <p>This topic gives you a brief overview of what Angular is, the advantages it provides, and what to expect as you start to build your applications.</p>
+    <p>To see Angular in action, see the <a href="start">Getting Started</a> tutorial.
+        This tutorial uses <a href="https://stackblitz.com">stackblitz.com</a>, for you to explore a working example of Angular without any installation requirements.</p>
+    <p>The following sections are recommended to explore Angular's capabilities further:</p>
+    <ul>
+        <li><a href="guide/understanding-angular-overview">Understanding Angular</a></li>
+        <li><a href="guide/developer-guide-overview">Angular Developer Guide</a></li>
+    </ul>
+    <!-- links -->
+    <!-- external links -->
+    <!-- end links -->
+
+    <div class="reviewed">Last reviewed on Mon Feb 28 2022</div>
+</div>
+</body>
+</html>
